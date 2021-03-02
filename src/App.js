@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+// node_modules
+import React from "react";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+
+// routes
+import routes from "routes";
+
+// provider
+import GlobalProvider from "store/provider";
+
+// hoc
+import Layout from "hoc/Layout";
+
+// css
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <GlobalProvider>
+            <Layout>
+                <div className="App">
+                    {/* Route Definition */}
+                    <Router>
+                        <Switch>
+                            {routes.map((route) => (
+                                <Route key={route.label} {...route} />
+                            ))}
+                        </Switch>
+                    </Router>
+                    {/* Route Definition END */}
+                </div>
+            </Layout>
+        </GlobalProvider>
+    );
 }
+
+App.displayName = "App";
 
 export default App;
