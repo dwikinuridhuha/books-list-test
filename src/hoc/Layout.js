@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Layout = ({ children }) => (
-  <div className="p-4 min-h-screen min-w-full">{children}</div>
-);
+const Layout = ({ children }) => <>{children}</>;
 
 Layout.propTypes = {
   children: PropTypes.element,
