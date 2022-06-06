@@ -23,7 +23,7 @@ const Buku = () => {
         <main className="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
           <div className="main-content flex flex-col flex-grow p-4">
             <h1 className="font-bold text-2xl text-gray-700">Dashboard</h1>
-            <div className="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4">
+            <div className="flex flex-col flex-grow mt-4">
               <Table />
             </div>
           </div>

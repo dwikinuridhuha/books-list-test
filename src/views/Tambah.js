@@ -1,14 +1,8 @@
 // node_modules
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-// context
-import GlobalContext from "store/context";
-
 const Tambah = () => {
-  // eslint-disable-next-line no-unused-vars
-  const { sampleGlobalVar, updateSampleGlobalVar } = useContext(GlobalContext);
-
   return (
     <div className="items-center justify-center flex h-screen">
       <div className="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col md:w-1/2 sm:shadow-md">

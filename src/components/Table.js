@@ -12,12 +12,12 @@ const Table = () => {
   return (
     <>
       <div className="flex flex-row justify-between">
-        <button
+        <Link
           className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          type="button"
+          to="/tambah"
         >
           Tambah
-        </button>
+        </Link>
 
         <input
           id="search"
@@ -52,7 +52,7 @@ const Table = () => {
             <td className="px-6 py-4 text-sm text-gray-500">2021-1-12</td>
             <td className="px-6 py-4">
               <Link
-                href="/"
+                href="/tambah"
                 className="px-4 py-1 text-sm text-white bg-blue-400 rounded"
               >
                 Edit
@@ -60,7 +60,7 @@ const Table = () => {
             </td>
             <td className="px-6 py-4">
               <Link
-                href="/"
+                href="/tambah"
                 className="px-4 py-1 text-sm text-white bg-red-400 rounded"
               >
                 Delete

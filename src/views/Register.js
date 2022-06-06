@@ -41,7 +41,7 @@ const Register = () => {
             username: res.data.data.username,
           };
           updateSampleGlobalVar(simpanData);
-          history.push("/");
+          history.push("/buku");
         }
       });
   };

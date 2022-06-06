@@ -32,6 +32,7 @@
     "comma-dangle": "off",
     "react/react-in-jsx-scope": "off",
     "indent": "off",
+    "eqeqeq":"off",
     "linebreak-style": 0,
     "jsx-a11y/label-has-associated-control": ["error", {
         "required": {
