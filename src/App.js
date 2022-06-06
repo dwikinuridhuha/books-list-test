@@ -15,23 +15,23 @@ import Layout from "hoc/Layout";
 import "./App.css";
 
 function App() {
-    return (
-        <GlobalProvider>
-            <Layout>
-                <div className="App">
-                    {/* Route Definition */}
-                    <Router>
-                        <Switch>
-                            {routes.map((route) => (
-                                <Route key={route.label} {...route} />
-                            ))}
-                        </Switch>
-                    </Router>
-                    {/* Route Definition END */}
-                </div>
-            </Layout>
-        </GlobalProvider>
-    );
+  return (
+    <GlobalProvider>
+      <Layout>
+        <div className="App">
+          {/* Route Definition */}
+          <Router>
+            <Switch>
+              {routes.map((route) => (
+                <Route key={route.label} {...route} />
+              ))}
+            </Switch>
+          </Router>
+          {/* Route Definition END */}
+        </div>
+      </Layout>
+    </GlobalProvider>
+  );
 }
 
 App.displayName = "App";

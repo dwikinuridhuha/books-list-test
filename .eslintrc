@@ -3,13 +3,11 @@
     "react-app",
     "airbnb",
     "plugin:jsx-a11y/recommended",
-    "prettier",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
   "plugins": [
     "jsx-a11y",
-    "prettier",
     "react-hooks"
   ],
   "rules": {
@@ -20,11 +18,18 @@
     "react/display-name": [2, { "ignoreTranspilerName": true }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": [
-      "error", {
-        "semi": true
-      }
-    ]
+    "react/jsx-no-comment-textnodes": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-indent": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "react/jsx-indent-props": "off",
+    "quotes": "off",
+    "react/jsx-curly-newline": "off",
+    "comma-dangle": "off",
+    "react/react-in-jsx-scope": "off",
+    "indent": "off",
+    "linebreak-style": 0
   },
   "settings": {
     "import/resolver": {
