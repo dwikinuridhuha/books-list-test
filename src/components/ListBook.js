@@ -1,10 +1,26 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable react/prop-types */
-// node_modules
-import React from "react";
+/* eslint-disable react/button-has-type */
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import GlobalContext from "store/context";
+import axios from "axios";
 
 const ListBook = ({ books }) => {
+  const { sampleGlobalVar } = useContext(GlobalContext);
+  const deleteBookById = (id) => {
+    axios
+      .delete(
+        `http://159.223.57.121:8080/books/${id}`,
+        { id },
+        {
+          headers: {
+            Authorization: `${sampleGlobalVar.token}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
   return (
     <>
       {books &&
@@ -30,12 +46,12 @@ const ListBook = ({ books }) => {
               </Link>
             </td>
             <td className="px-6 py-4">
-              <Link
-                href="/tambah"
+              <button
+                onClick={() => deleteBookById(book.id)}
                 className="px-4 py-1 text-sm text-white bg-red-400 rounded"
               >
                 Delete
-              </Link>
+              </button>
             </td>
           </tr>
         ))}

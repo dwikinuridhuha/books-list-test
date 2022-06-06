@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
@@ -34,9 +35,6 @@ const Tambah = () => {
       })
       .then((res) => {
         console.log(res.data);
-      })
-      .catch((err) => {
-        console.error(err.message);
       });
   };
 
@@ -54,8 +52,6 @@ const Tambah = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
-
         setFormData({
           author: "",
           title: "",
@@ -63,9 +59,6 @@ const Tambah = () => {
           isbn: "",
           publisher: "",
         });
-      })
-      .catch((err) => {
-        console.error(err.message);
       });
   };
 

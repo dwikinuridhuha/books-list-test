@@ -1,5 +1,3 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
@@ -7,7 +5,6 @@ import Table from "components/Table";
 import Sidebar from "components/Sidebar";
 import HeaderDashboard from "components/HeaderDashboard";
 
-// context
 import GlobalContext from "store/context";
 
 const Buku = () => {
@@ -22,11 +19,7 @@ const Buku = () => {
         },
       })
       .then((res) => {
-        console.log(res.data);
         setBooks(res.data.data);
-      })
-      .catch((error) => {
-        console.error(error);
       });
   };
 
@@ -37,7 +30,6 @@ const Buku = () => {
       );
       updateSampleGlobalVar(getDataUserInLocalStorage);
       ambilData(getDataUserInLocalStorage.token);
-      console.log(getDataUserInLocalStorage);
     }
 
     if (sampleGlobalVar && sampleGlobalVar?.token) {
@@ -46,8 +38,6 @@ const Buku = () => {
   }, []);
   return (
     <>
-      {/* {sampleGlobalVar && sampleGlobalVar?.token}
-      {books && console.log(books)} */}
       <div>
         <HeaderDashboard />
       </div>

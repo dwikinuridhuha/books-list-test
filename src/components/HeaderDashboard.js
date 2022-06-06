@@ -1,15 +1,9 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 // node_modules
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-// context
-import GlobalContext from "store/context";
-
 const HeaderDashboard = () => {
-  // eslint-disable-next-line no-unused-vars
-  const { sampleGlobalVar, updateSampleGlobalVar } = useContext(GlobalContext);
-
   return (
     <header className="header bg-white shadow py-4 px-4">
       <div className="header-content flex items-center flex-row">
@@ -38,7 +32,7 @@ const HeaderDashboard = () => {
           </div>
           <div className="flex md:hidden">
             <Link
-              href="/"
+              to="/"
               className="flex items-center justify-center h-10 w-10 border-transparent"
             >
               <svg
@@ -56,7 +50,7 @@ const HeaderDashboard = () => {
           </div>
         </form>
         <div className="flex ml-auto">
-          <a href className="flex flex-row items-center">
+          <Link to="/" className="flex flex-row items-center">
             <img
               alt="image"
               src="https://pbs.twimg.com/profile_images/378800000298815220/b567757616f720812125bfbac395ff54_normal.png"
@@ -70,7 +64,7 @@ const HeaderDashboard = () => {
                 Manager
               </span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </header>

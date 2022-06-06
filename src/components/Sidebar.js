@@ -1,21 +1,15 @@
 // node_modules
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-// context
-import GlobalContext from "store/context";
-
 const Sidebar = () => {
-  // eslint-disable-next-line no-unused-vars
-  const { sampleGlobalVar, updateSampleGlobalVar } = useContext(GlobalContext);
-
   return (
     <aside className="sidebar w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500">
       <div className="sidebar-content px-4 py-6">
         <ul className="flex flex-col w-full">
           <li className="my-px">
             <Link
-              href="/"
+              to="/"
               className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-700 bg-gray-100"
             >
               <span className="flex items-center justify-center text-lg text-gray-400">
@@ -41,7 +35,7 @@ const Sidebar = () => {
           </li>
           <li className="my-px">
             <Link
-              href="/"
+              to="/"
               className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
             >
               <span className="flex items-center justify-center text-lg text-gray-400">
@@ -62,7 +56,7 @@ const Sidebar = () => {
           </li>
           <li className="my-px">
             <Link
-              href="/"
+              to="/"
               className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
             >
               <span className="flex items-center justify-center text-lg text-gray-400">
