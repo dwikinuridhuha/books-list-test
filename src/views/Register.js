@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // context
 import GlobalContext from "store/context";
 
-const About = () => {
+const Register = () => {
   const { sampleGlobalVar, updateSampleGlobalVar } = useContext(GlobalContext);
 
   return (
@@ -14,7 +14,7 @@ const About = () => {
         Home
       </Link>
 
-      <p>{sampleGlobalVar} in About</p>
+      <p>{sampleGlobalVar} in Register</p>
       <br />
       <br />
       <button
@@ -30,6 +30,6 @@ const About = () => {
   );
 };
 
-About.displayName = "About";
+Register.displayName = "Register";
 
-export default About;
+export default Register;

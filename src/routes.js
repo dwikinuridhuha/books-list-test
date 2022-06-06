@@ -1,17 +1,31 @@
-import About from "views/About";
-import Home from "views/Home";
+import Register from "views/Register";
+import Login from "views/Login";
+import Buku from "views/Buku";
+import Tambah from "views/Tambah";
 
 const routes = [
   {
-    label: "Home",
+    label: "Login",
     path: "/",
-    component: Home,
+    component: Login,
     exact: true,
   },
   {
-    label: "About",
-    path: "/about",
-    component: About,
+    label: "Register",
+    path: "/register",
+    component: Register,
+    exact: true,
+  },
+  {
+    label: "Buku",
+    path: "/buku",
+    component: Buku,
+    exact: true,
+  },
+  {
+    label: "Tambah",
+    path: "/tambah",
+    component: Tambah,
     exact: true,
   },
 ];
