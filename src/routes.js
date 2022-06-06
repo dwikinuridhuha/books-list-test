@@ -28,6 +28,12 @@ const routes = [
     component: Tambah,
     exact: true,
   },
+  {
+    label: "Edit",
+    path: "/edit/:id",
+    component: Tambah,
+    exact: true,
+  },
 ];
 
 export default routes;

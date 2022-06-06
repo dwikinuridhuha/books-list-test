@@ -5,7 +5,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ListBook = ({ books }) => {
-  console.log(books);
   return (
     <>
       {books &&
@@ -24,7 +23,7 @@ const ListBook = ({ books }) => {
             </td>
             <td className="px-6 py-4">
               <Link
-                href="/tambah"
+                to={`/edit/${book.id}`}
                 className="px-4 py-1 text-sm text-white bg-blue-400 rounded"
               >
                 Edit
