@@ -36,6 +36,7 @@ const Login = () => {
             token: res.data.data.token,
             username: res.data.data.username,
           };
+          localStorage.setItem("dataUser", JSON.stringify(simpanData));
           updateSampleGlobalVar(simpanData);
           history.push("/buku");
         } else {

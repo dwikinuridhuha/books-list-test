@@ -1,20 +1,53 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-// node_modules
+import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
+
 import Table from "components/Table";
 import Sidebar from "components/Sidebar";
 import HeaderDashboard from "components/HeaderDashboard";
-import React, { useContext } from "react";
-// import { Link } from "react-router-dom";
 
 // context
 import GlobalContext from "store/context";
 
 const Buku = () => {
-  // eslint-disable-next-line no-unused-vars
   const { sampleGlobalVar, updateSampleGlobalVar } = useContext(GlobalContext);
+  const [books, setBooks] = useState([]);
 
+  const ambilData = (token) => {
+    axios
+      .get("http://159.223.57.121:8080/books?limit=5&offset=0", {
+        headers: {
+          Authorization: `${token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setBooks(res.data.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("dataUser") !== null) {
+      const getDataUserInLocalStorage = JSON.parse(
+        localStorage.getItem("dataUser")
+      );
+      updateSampleGlobalVar(getDataUserInLocalStorage);
+      ambilData(getDataUserInLocalStorage.token);
+      console.log(getDataUserInLocalStorage);
+    }
+
+    if (sampleGlobalVar && sampleGlobalVar?.token) {
+      ambilData(sampleGlobalVar?.token);
+    }
+  }, []);
   return (
     <>
+      {/* {sampleGlobalVar && sampleGlobalVar?.token}
+      {books && console.log(books)} */}
       <div>
         <HeaderDashboard />
       </div>
@@ -24,17 +57,9 @@ const Buku = () => {
           <div className="main-content flex flex-col flex-grow p-4">
             <h1 className="font-bold text-2xl text-gray-700">Dashboard</h1>
             <div className="flex flex-col flex-grow mt-4">
-              <Table />
+              <Table books={books} />
             </div>
           </div>
-          <footer className="footer px-4 py-6">
-            <div className="footer-content">
-              <p className="text-sm text-gray-600 text-center">
-                © Brandname 2020. All rights reserved.
-                <a href="https://twitter.com/iaminos">by iAmine</a>
-              </p>
-            </div>
-          </footer>
         </main>
       </div>
     </>
